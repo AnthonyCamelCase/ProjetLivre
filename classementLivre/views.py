@@ -3,6 +3,9 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+app_name = "classementLivre"
+
 
 def accueil(request):
-    return HttpResponse("Bienvenue sur le site du lecteur du dimanche.")
+    return render(request, "classementLivre/accueil.html")
+    # return HttpResponse("Bienvenue sur le site du lecteur du dimanche.")
