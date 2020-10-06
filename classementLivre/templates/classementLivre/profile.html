@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le lecteur du dimanche</title>
+  </head>
+
+  <body>
+    <h1>Profil de l'utilisateur</h1>
+
+    <div class="livres">
+      <ul>
+        {%for livre in livres %}
+        <li>{{ livre.titre }} de la saga {{livre.saga.nom_saga}}</li>
+
+        {% endfor %}
+      </ul>
+      <p>{{livres.0.auteur}}</p>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci tempora,
+      unde consequuntur, molestias suscipit possimus natus repellendus tenetur
+      distinctio at nemo. Consectetur temporibus cumque mollitia cum iure vitae
+      quia maiores!
+    </p>
+  </body>
+</html>
