@@ -10,13 +10,11 @@
     <h1>Profil de l'utilisateur</h1>
 
     <div class="livres">
+      <h2>{{livre}}</h2>
       <ul>
-        {%for avis in livre.avis %}
-        <li>
-          <h2>{{avis.titre_avis }}</h2>
-          <p>{{avis.commentaire}}</p>
-          {% endfor %}
-        </li>
+        <li>{{ livre.auteur}}</li>
+        <li>{{ livre.avis }}</li>
+        <li>{{ livre.saga }}</li>
       </ul>
     </div>
     <p>

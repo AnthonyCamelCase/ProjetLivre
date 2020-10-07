@@ -18,6 +18,6 @@ def profile(request):
     return render(request, "classementLivre/profile.html", {"livres": livres})
 
 
-def livre(request):
-    livre = Livre.objects.all().filter(titre=titre_livre)
+def livre(request, titre_livre):
+    livre = Livre.objects.all().filter(titre=titre_livre)[0]
     return render(request, "classementLivre/livre.html", {"livre": livre})
