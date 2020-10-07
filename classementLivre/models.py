@@ -34,14 +34,27 @@ class ListeDeLecture(models.Model):
 # table des livres contenant le nom et le nombre de mots liés aux tables d'auteurs et de sagas
 class Livre(models.Model):
     titre = models.CharField(max_length=200)
+    prepopulated_fields = {"slug": ("titre",)}
     saga = models.ForeignKey(
         "saga", on_delete=models.DO_NOTHING, default="livre unique")
     auteur = models.ForeignKey(
         "auteur", on_delete=models.DO_NOTHING)
     nb_de_mots = models.IntegerField(default=0)
+    avis = models.ForeignKey("avis", on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.titreexit
+        return self.titre
+
+
+class Avis(models.Model):
+    titre_avis = models.CharField(max_length=200)
+    titre = models.CharField(max_length=200)
+    commentaire = models.TextField()
+    date_avis = models.DateTimeField(auto_now_add=True)
+    # utilisateur auteur de l'avis
+
+    def __str__(self):
+        return self.titre_avis
 
 
 # table présentant les auteurs, prénom, nom et age, voire lien biblio??

@@ -9,7 +9,16 @@
   <body>
     <h1>Profil de l'utilisateur</h1>
 
-    <div class="utilisateur"></div>
+    <div class="livres">
+      <ul>
+        {%for avis in livre.avis %}
+        <li>
+          <h2>{{avis.titre_avis }}</h2>
+          <p>{{avis.commentaire}}</p>
+          {% endfor %}
+        </li>
+      </ul>
+    </div>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci tempora,
       unde consequuntur, molestias suscipit possimus natus repellendus tenetur

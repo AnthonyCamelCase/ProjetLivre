@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Utilisateur, Auteur, Livre, Saga
+from .models import Utilisateur, Auteur, Livre, Saga, Avis
 
 # Create your views here.
 
@@ -16,3 +16,8 @@ def accueil(request):
 def profile(request):
     livres = Livre.objects.all()
     return render(request, "classementLivre/profile.html", {"livres": livres})
+
+
+def livre(request):
+    livre = Livre.objects.all().filter(titre=titre_livre)
+    return render(request, "classementLivre/livre.html", {"livre": livre})
